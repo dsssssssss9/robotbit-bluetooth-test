@@ -1,9 +1,3 @@
-bluetooth.onBluetoothConnected(function () {
-    basic.showIcon(IconNames.Yes)
-})
-bluetooth.onBluetoothDisconnected(function () {
-    basic.showIcon(IconNames.No)
-})
 /**
  * RobotBit LCD screen wiring / colour code
  * 
@@ -15,6 +9,15 @@ bluetooth.onBluetoothDisconnected(function () {
  * 
  * Blue      ----->     SCL
  */
+/**
+ * 2 wire DC motor connected to M1 A
+ */
+bluetooth.onBluetoothConnected(function () {
+    basic.showIcon(IconNames.Yes)
+})
+bluetooth.onBluetoothDisconnected(function () {
+    basic.showIcon(IconNames.No)
+})
 let SerialData = ""
 robotbit.MotorStopAll()
 basic.showIcon(IconNames.Ghost)
@@ -27,7 +30,7 @@ basic.forever(function () {
         lcdDisplay.lcdSetBgIamge("fruit.png")
         robotbit.MotorRun(robotbit.Motors.M1A, 138)
     } else if (SerialData == "B") {
-        lcdDisplay.lcdSetBgIamge("Sister1.jpg")
+        lcdDisplay.lcdSetBgIamge("building.png")
         robotbit.MotorStopAll()
     }
 })

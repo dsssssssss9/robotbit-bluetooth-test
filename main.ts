@@ -4,6 +4,17 @@ bluetooth.onBluetoothConnected(function () {
 bluetooth.onBluetoothDisconnected(function () {
     basic.showIcon(IconNames.No)
 })
+/**
+ * RobotBit LCD screen wiring / colour code
+ * 
+ * Black     ----->     GND
+ * 
+ * Red       ----->     3V
+ * 
+ * Green     ----->     SDA
+ * 
+ * Blue      ----->     SCL
+ */
 let SerialData = ""
 robotbit.MotorStopAll()
 basic.showIcon(IconNames.Ghost)
